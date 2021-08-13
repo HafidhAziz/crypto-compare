@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">crypto-compare</string>
+
+    <string name="title_watchlist">Watchlist</string>
+    <string name="title_stream">Stream</string>
+    <string name="title_search">Search</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_portfolio">Portfolio</string>
+    <string name="back_pressed_info">Tekan sekali lagi untuk keluar</string>
 </resources>
