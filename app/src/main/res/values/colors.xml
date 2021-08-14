@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="reddish">#cb3c3c</color>
+    <color name="black_700">#5E5E5E</color>
     <color name="black_400">#9E9E9E</color>
+    <color name="green">#27AE60</color>
+    <color name="lipstick">#d0021b</color>
 </resources>

@@ -53,9 +53,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
-    def nav_version_ktx = '2.3.5'
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version_ktx"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version_ktx"
+    def jetpack_navigation_version = '2.3.5'
+    implementation "androidx.navigation:navigation-fragment-ktx:$jetpack_navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$jetpack_navigation_version"
 
     def coroutines_version = "1.5.0"
     def coroutines_core_version = "1.4.1"
@@ -73,8 +73,11 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
-    //paging
-    implementation 'androidx.paging:paging-runtime-ktx:3.0.0'
+    def jetpack_paging_version = '3.0.1'
+    implementation "androidx.paging:paging-runtime-ktx:$jetpack_paging_version"
+
+    def jetpack_data_store_version = '1.0.0-rc01'
+    implementation "androidx.datastore:datastore-preferences:$jetpack_data_store_version"
 
     def gander_version = '3.1.0'
     debugImplementation "com.ashokvarma.android:gander-imdb:$gander_version"

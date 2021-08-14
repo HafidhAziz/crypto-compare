@@ -1,4 +1,4 @@
-package com.example.crypto_compare.presentation.main
+package com.example.crypto_compare.presentation
 
 import android.os.Bundle
 import android.view.KeyEvent
