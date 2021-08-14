@@ -9,11 +9,8 @@ import androidx.navigation.NavController
 import com.example.crypto_compare.R
 import com.example.crypto_compare.databinding.ActivityMainBinding
 import com.example.framework.setupWithNavController
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-
-    private val viewModel: MainViewModel by viewModel()
 
     private lateinit var mainBinding: ActivityMainBinding
     private var currentNavController: LiveData<NavController>? = null
@@ -57,8 +54,7 @@ class MainActivity : AppCompatActivity() {
                         this,
                         getString(R.string.back_pressed_info),
                         Toast.LENGTH_SHORT
-                    )
-                        .show()
+                    ).show()
                     lastBackPressedTime = it.eventTime
                 }
                 return true

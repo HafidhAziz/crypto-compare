@@ -1,5 +1,6 @@
 package com.example.crypto_compare.module
 
+import com.ashokvarma.gander.GanderInterceptor
 import com.example.crypto_compare.BuildConfig
 import com.example.crypto_compare.repository.WatchlistService
 import com.example.framework.ResponseHandler
@@ -7,6 +8,7 @@ import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,6 +25,7 @@ val networkModule = module {
             writeTimeout(TIMEOUT, TimeUnit.SECONDS)
             readTimeout(TIMEOUT, TimeUnit.SECONDS)
             cache(null)
+            addInterceptor(GanderInterceptor(androidContext()).showNotification(true))
             addInterceptor { chain ->
                 val request = requestBuilder(chain)
                 chain.proceed(request)

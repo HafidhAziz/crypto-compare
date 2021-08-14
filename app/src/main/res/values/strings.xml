@@ -7,4 +7,7 @@
     <string name="title_chat">Chat</string>
     <string name="title_portfolio">Portfolio</string>
     <string name="back_pressed_info">Tekan sekali lagi untuk keluar</string>
+    <string name="text_error">Terjadi kesalahan</string>
+    <string name="text_retry">Coba lagi</string>
+    <string name="text_data_not_found">Data tidak ditemukan</string>
 </resources>

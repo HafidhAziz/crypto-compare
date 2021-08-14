@@ -9,7 +9,7 @@ interface WatchlistService {
     suspend fun getWatchlistApi(
         @Query("page") page: Int?,
         @Query("limit") limit: Int?,
-        @Query("tysm") tysm: String = "USD",
+        @Query("tsym") tysm: String = "USD",
         @Query("ascending") ascending: Boolean = true
     ): WatchlistResponse
 }
