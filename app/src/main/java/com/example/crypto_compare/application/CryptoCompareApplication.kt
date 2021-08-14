@@ -4,6 +4,7 @@ import android.app.Application
 import com.ashokvarma.gander.Gander
 import com.ashokvarma.gander.imdb.GanderIMDB
 import com.example.crypto_compare.module.networkModule
+import com.example.crypto_compare.module.preferenceModule
 import com.example.crypto_compare.module.repositoryModule
 import com.example.crypto_compare.module.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -23,7 +24,8 @@ class CryptoCompareApplication : Application() {
                 listOf(
                     viewModelModule,
                     networkModule,
-                    repositoryModule
+                    repositoryModule,
+                    preferenceModule
                 )
             )
         }
