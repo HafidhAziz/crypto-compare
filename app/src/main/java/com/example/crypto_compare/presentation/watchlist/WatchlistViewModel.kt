@@ -1,9 +1,11 @@
 package com.example.crypto_compare.presentation.watchlist
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import androidx.paging.liveData
 import com.example.crypto_compare.data.DataItem
 import com.example.crypto_compare.repository.WatchlistPagingSource
@@ -24,7 +26,7 @@ class WatchlistViewModel(private val watchlistRepository: WatchlistRepository) :
                     pagingDataSource = it
                 }
             }
-        ).liveData
+        ).liveData.cachedIn(viewModelScope)
     }
 
     fun getWatchlist() {
