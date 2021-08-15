@@ -2,40 +2,27 @@ package com.example.crypto_compare.presentation.login
 
 import android.app.Activity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import com.example.crypto_compare.R
-import com.example.crypto_compare.databinding.FragmentLoginBinding
+import com.example.crypto_compare.databinding.ActivityLoginBinding
+import com.example.crypto_compare.presentation.MainActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class LoginFragment : Fragment() {
+class LoginActivity : AppCompatActivity() {
 
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: ActivityLoginBinding
     private val viewModel: LoginViewModel by viewModel()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setupEvents()
+        observeUserPreference()
     }
 
     private fun setupEvents() {
@@ -50,7 +37,8 @@ class LoginFragment : Fragment() {
                 }
                 if (isValid) {
                     viewModel.saveUsernameToLocal(username)
-                    hideKeyboard()
+                    MainActivity.startThisActivity(this@LoginActivity)
+                    hideKeyboard(it)
                 }
             }
             tvFb.setOnClickListener {
@@ -68,22 +56,23 @@ class LoginFragment : Fragment() {
             tvRegister.setOnClickListener {
                 showNoYetImplementedToast(getString(R.string.text_not_yet_implemented))
             }
-            ivBack.setOnClickListener {
-                requireActivity().onBackPressed()
+        }
+    }
+
+    private fun observeUserPreference() {
+        viewModel.usernameLogin.observe(this) { username ->
+            if (!username.isNullOrEmpty()) {
+                MainActivity.startThisActivity(this)
             }
         }
     }
 
     private fun showNoYetImplementedToast(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
-    private fun hideKeyboard() {
-        val imm =
-            requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(
-            requireView().windowToken,
-            InputMethodManager.RESULT_UNCHANGED_SHOWN
-        )
+    private fun hideKeyboard(view: View) {
+        val imm = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, InputMethodManager.RESULT_UNCHANGED_SHOWN)
     }
 }

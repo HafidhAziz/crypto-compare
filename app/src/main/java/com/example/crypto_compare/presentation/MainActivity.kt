@@ -1,5 +1,7 @@
 package com.example.crypto_compare.presentation
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.Toast
@@ -65,5 +67,10 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val BACK_PRESSED_PERIOD: Long = 1000
+
+        fun startThisActivity(context: Context) {
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 }

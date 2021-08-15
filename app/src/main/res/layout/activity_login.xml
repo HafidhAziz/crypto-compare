@@ -9,6 +9,8 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?android:actionBarSize"
+        android:contentInsetStart="0dp"
+        app:contentInsetStart="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,15 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivBack"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_arrow_back" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -192,8 +185,8 @@
             android:id="@+id/tvDontHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
             android:layout_marginTop="30dp"
+            android:layout_marginEnd="2dp"
             android:text="@string/text_dont_have_account"
             app:layout_constraintEnd_toStartOf="@+id/tvRegister"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -204,10 +197,10 @@
             android:id="@+id/tvRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
             android:layout_marginTop="30dp"
             android:text="@string/text_register"
             android:textColor="@color/green"
-            android:layout_marginStart="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvDontHaveAccount"
             app:layout_constraintTop_toBottomOf="@+id/btnLoginWithFingerPrint" />

@@ -102,6 +102,7 @@ class WatchlistFragment : Fragment() {
             is LoadState.Loading -> {
                 rvWatchlist.visibility = View.GONE
                 pbLoading.visibility = if (srlRefresh.isRefreshing) View.GONE else View.VISIBLE
+                viewEmptyState.visibility = View.GONE
             }
             else -> {
                 pbLoading.visibility = View.GONE
