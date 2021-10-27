@@ -9,7 +9,7 @@
 * Simple MVVM Design Pattern
 * Android security best practice (Shared Preferences private mode)
 * Getting sample data from https://min-api.cryptocompare.com/documentation?key=Toplists&cat=topTotalTopTierVolumeEndpointFull
-* Code with love
+* Code with love ❤️
 
 # Getting Started
 1. Install Android Studio, if you don't already have it.
